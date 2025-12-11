@@ -670,3 +670,131 @@ img {
     padding: 2rem 1.5rem;
   }
 }
+
+/* ================================
+   MODERN FARMER SECTION
+================================ */
+
+/* TITLE AREA */
+.farmer-title-wrap {
+  text-align: center;
+  background: var(--bg-white);
+  padding: 5rem 1rem 3rem;
+}
+
+.farmer-title-wrap h2 {
+  font-size: 3rem;
+  font-weight: 900;
+}
+
+.farmer-title-wrap p {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* IMAGE AREA */
+.farmer-image-wrap {
+  position: relative;
+  width: 100%;
+  min-height: 420px;
+  background: url("https://miaoda-site-img.s3cdn.medo.dev/images/c1aa4851-eda6-4d30-a21a-31b531fb4422.jpg")
+    center/cover no-repeat;
+  display: flex;
+  align-items: center;
+}
+
+.farmer-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(45, 80, 22, 0.75),
+    rgba(107, 68, 35, 0.55)
+  );
+}
+
+.farmer-image-content {
+  position: relative;
+  z-index: 2;
+  color: var(--text-light);
+  max-width: 600px;
+}
+
+.farmer-image-content h3 {
+  color: var(--text-light);
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.farmer-image-content p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+/* ICON FLEX GRID */
+.farmer-icon-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding: 5rem 1rem;
+}
+
+.icon-grid-card {
+  background: var(--bg-white);
+  border-radius: 18px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-smooth);
+}
+
+.icon-grid-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+.icon-grid-card i {
+  font-size: 2.8rem;
+  color: var(--primary-green);
+  margin-bottom: 1.2rem;
+}
+
+.icon-grid-card h4 {
+  margin-bottom: 0.6rem;
+}
+
+.icon-grid-card p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+@media (max-width: 992px) {
+  .farmer-icon-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .farmer-title-wrap h2 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .farmer-icon-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .farmer-title-wrap h2 {
+    font-size: 2rem;
+  }
+
+  .farmer-image-content h3 {
+    font-size: 1.7rem;
+  }
+}
+
