@@ -271,3 +271,96 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   
 });
+
+
+// NAV / HERO behavior: set hero padding initially, toggle overlay on scroll,
+// and set active nav-link based on location.pathname so active persists after navigation.
+document.addEventListener('DOMContentLoaded', function () {
+  try {
+    var navbar = document.querySelector('.navbar');
+    var hero = document.querySelector('.hero-section');
+    var navLinks = document.querySelectorAll('.nav-link');
+
+    // ensure navbar has initial class
+    if (navbar) {
+      navbar.classList.add('initial');
+    }
+
+    // set hero padding to navbar height so hero starts below navbar
+    function setHeroPadding() {
+      if (navbar && hero) {
+        var h = navbar.offsetHeight;
+        hero.style.paddingTop = h + 'px';
+        hero.classList.add('padded');
+      }
+    }
+    setHeroPadding();
+    // recalc on resize
+    window.addEventListener('resize', function () {
+      setHeroPadding();
+    });
+
+    // scroll handler: when scrolled down, enable overlay and remove hero padding
+    function onScroll() {
+      if (!navbar || !hero) return;
+      if (window.scrollY > 20) {
+        navbar.classList.add('overlay');
+        navbar.classList.remove('initial');
+        
+      } else {
+        navbar.classList.remove('overlay');
+        navbar.classList.add('initial');
+        setHeroPadding();
+      }
+    }
+    window.addEventListener('scroll', onScroll);
+    // run once
+    onScroll();
+
+    // Active link detection based on current filename
+    var path = window.location.pathname.split('/').pop() || 'index.html';
+    navLinks.forEach(function(link) {
+      // remove any prior active
+      link.classList.remove('active');
+      // make relative href comparison
+      var href = link.getAttribute('href');
+      if (!href) return;
+      var linkFile = href.split('/').pop();
+      if (linkFile === path) {
+        link.classList.add('active');
+      }
+    });
+
+    // For single-page style anchors: if href matches hash or current path, still highlight
+    // Also add click listener to persist active immediately when clicking (useful if not reloading)
+    navLinks.forEach(function(link){
+      link.addEventListener('click', function(e){
+        // remove active on others
+        navLinks.forEach(function(l){ l.classList.remove('active'); });
+        link.classList.add('active');
+      });
+    });
+
+  } catch (err) {
+    console.error('Nav/Hero script error', err);
+  }
+});
+
+document.addEventListener("DOMContentLoaded",()=>{
+ const nav=document.querySelector(".navbar");
+ const hero=document.querySelector(".hero-section");
+ function pad(){ if(nav&&hero){ hero.style.paddingTop=nav.offsetHeight+"px"; }}
+ pad(); window.addEventListener("resize",pad);
+ function sc(){
+   if(window.scrollY > (hero.offsetHeight - nav.offsetHeight)){
+     nav.classList.add("overlay");
+     nav.classList.remove("initial");
+     hero.style.paddingTop="0px";
+   } else {
+     nav.classList.add("initial");
+     nav.classList.remove("overlay");
+     pad();
+   }
+ }
+ window.addEventListener("scroll",sc); sc();
+});
