@@ -911,3 +911,94 @@ img {
 }
 
 
+
+
+/* ===== Navbar Final Confirmed Behavior ===== */
+
+/* Instant switch */
+.navbar {
+  transition: none !important;
+}
+
+/* After scroll: solid white */
+html body .navbar.scrolled {
+  background-color: #ffffff !important;
+  background-image: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* Desktop text colors */
+.navbar.scrolled a {
+  color: #2f6b2f !important;
+}
+
+/* Active link always gold */
+.navbar a.active,
+.navbar.scrolled a.active {
+  color: #d4af37 !important;
+}
+
+/* Tablet & Mobile: always green */
+@media (max-width: 992px) {
+  .navbar a {
+    color: #2f6b2f !important;
+  }
+  .navbar a.active {
+    color: #d4af37 !important;
+  }
+}
+
+
+/* ===== Navbar Logo Alignment (Global) ===== */
+.navbar {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+}
+
+/* ===== Logo Size Refinement ===== */
+.logo-img {
+  height: clamp(56px, 6vw, 72px) !important; /* slightly bigger than nav text */
+  width: auto;
+  object-fit: contain;
+}
+
+
+/* ===== Mobile Dropdown Menu Background Fix ===== */
+@media (max-width: 992px) {
+
+  /* Dropdown / expanded menu container */
+  .navbar ul,
+  .navbar .nav-menu,
+  .navbar .mobile-menu {
+    background: #ffffff !important;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    padding: 12px 18px;
+  }
+
+  /* Menu items */
+  .navbar ul li {
+    padding: 12px 0;
+  }
+
+  /* Divider between items */
+  .navbar ul li + li {
+    border-top: 1px solid rgba(0,0,0,0.06);
+  }
+
+  /* Text color stays green */
+  .navbar ul a {
+    color: #2f6b2f !important;
+  }
+
+  /* Active item gold */
+  .navbar ul a.active {
+    color: #d4af37 !important;
+  }
+}
