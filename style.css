@@ -681,431 +681,233 @@ img {
   }
 }
 
-/* Fix mobile dropdown background */
+/* ================================
+   MODERN FARMER SECTION
+================================ */
+
+/* TITLE AREA */
+.farmer-title-wrap {
+  text-align: center;
+  background: var(--bg-white);
+  padding: 5rem 1rem 3rem;
+}
+
+.farmer-title-wrap h2 {
+  font-size: 3rem;
+  font-weight: 900;
+}
+
+.farmer-title-wrap p {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* IMAGE AREA */
+.farmer-image-wrap {
+  position: relative;
+  width: 100%;
+  min-height: 420px;
+  background: url("https://miaoda-site-img.s3cdn.medo.dev/images/8fd658c2-1dfa-48f9-8dcb-e47a6132e131.jpg")
+    center/cover no-repeat;
+  display: flex;
+  align-items: center;
+}
+
+.farmer-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(45, 80, 22, 0.75),
+    rgba(107, 68, 35, 0.55)
+  );
+}
+
+.farmer-image-content {
+  position: relative;
+  z-index: 2;
+  color: var(--text-light);
+  max-width: 600px;
+}
+
+.farmer-image-content h3 {
+  color: var(--text-light);
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.farmer-image-content p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+/* ICON FLEX GRID */
+.farmer-icon-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding: 5rem 1rem;
+}
+
+.icon-grid-card {
+  background: var(--bg-white);
+  border-radius: 18px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-smooth);
+}
+
+.icon-grid-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+.icon-grid-card i {
+  font-size: 2.8rem;
+  color: var(--primary-green);
+  margin-bottom: 1.2rem;
+}
+
+.icon-grid-card h4 {
+  margin-bottom: 0.6rem;
+}
+
+.icon-grid-card p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
 @media (max-width: 992px) {
-  .navbar-collapse {
-    background-color: rgba(255,255,255,0.92) !important;
-    padding: 1rem;
+  .farmer-icon-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
-  .navbar-nav .nav-link {
-    color: var(--primary-green) !important;
-  }
-}
-/* Active nav highlight */
 
-
-/* Enhanced navbar for visibility */
-.navbar {
-  background-color: rgba(255,255,255,0.75) !important;
-  backdrop-filter: blur(8px);
-}
-
-.navbar-brand img {
-  height: 55px !important;
-  width: auto;
-}
-
-/* Mobile menu beautify */
-@media (max-width: 992px) {
-  .navbar-collapse {
-    background: rgba(255,255,255,0.95) !important;
-    backdrop-filter: blur(10px);
-    border-radius: 12px;
-    margin-top: 1rem;
-    padding: 1.5rem;
-  }
-  .navbar-nav .nav-link {
-    font-size: 1.2rem;
-    padding: 0.7rem 0;
-    color: var(--primary-green) !important;
-  }
-  .navbar-brand img {
-    height: 60px !important;
+  .farmer-title-wrap h2 {
+    font-size: 2.5rem;
   }
 }
 
-/* PREMIUM NAVBAR REWORK */
-.navbar {
-  background: rgba(255,255,255,0.88) !important;
-  backdrop-filter: blur(12px) saturate(160%);
-  border-bottom: 1px solid rgba(0,0,0,0.05);
-  padding: 1.2rem 0 !important;
+@media (max-width: 576px) {
+  .farmer-icon-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .farmer-title-wrap h2 {
+    font-size: 2rem;
+  }
+
+  .farmer-image-content h3 {
+    font-size: 1.7rem;
+  }
+}
+/* Proven Process Section */
+.section-process {
+  /* background: linear-gradient(180deg, #0b7a3b 0%, #1e3d2b 100%); */
+  background: linear-gradient(135deg, rgba(45, 80, 22, 0.7), rgba(107, 68, 35, 0.5));
+  padding: 80px 0;
 }
 
-.navbar-brand img {
-  height: 75px !important;
-  width: auto;
-  filter: drop-shadow(0 2px 2px rgba(0,0,0,0.15));
+/* Glass cards */
+.process-card {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(6px);
+  border-radius: 18px;
+  padding: 30px;
+  text-align: center;
+  color: #fff;
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.navbar-nav .nav-link {
-  font-size: 1.1rem;
+.process-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+}
+
+/* Icon */
+.process-icon {
+  width: 64px;
+  height: 64px;
+  background: rgba(255,255,255,0.25);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-size: 26px;
+}
+/* FAQ */
+/* Scrollable FAQ Container */
+.faq-scroll-wrapper {
+  max-height: 420px; /* ~3 questions visible */
+  overflow-y: auto;
+  padding-right: 6px;
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+.faq-scroll-wrapper::-webkit-scrollbar {
+  width: 6px;
+}
+.faq-scroll-wrapper::-webkit-scrollbar-thumb {
+  background-color: rgba(11, 122, 59, 0.4);
+  border-radius: 10px;
+}
+
+/* FAQ Cards */
+.faq-accordion .accordion-item {
+  background: rgba(246, 251, 248, 0.95);
+  border-radius: 16px;
+  border: 1px solid rgba(11, 122, 59, 0.25);
+  margin-bottom: 14px;
+  transition: all 0.3s ease;
+}
+
+/* Question */
+.faq-accordion .accordion-button {
+  background: transparent;
+  color: #0b7a3b;
   font-weight: 600;
-  padding: 0.7rem 1.2rem !important;
-  transition: 0.3s ease;
-  color: var(--primary-green) !important;
-}
-
-.navbar-nav .nav-link:hover {
-  color: var(--accent-gold) !important;
-  transform: translateY(-2px);
-}
-
-/* Active Link Highlight */
-
-
-/* Mobile menu premium style */
-@media (max-width: 992px) {
-  .navbar-brand img { height: 80px !important; }
-
-  .navbar-collapse {
-    background: rgba(255,255,255,0.97);
-    backdrop-filter: blur(15px);
-    border-radius: 16px;
-    padding: 2rem !important;
-    box-shadow: 0 8px 28px rgba(0,0,0,0.15);
-  }
-
-  .navbar-nav .nav-link {
-    font-size: 1.3rem;
-    padding: 1rem 0 !important;
-  }
-}
-
-/* Glassmorphic transparent navbar */
-.navbar {
-  background: rgba(255,255,255,0.45) !important;
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border-bottom: 1px solid rgba(255,255,255,0.3);
-  padding: 1.1rem 0 !important;
-}
-
-/* Active highlight stronger */
-
-
-/* Fix hero image being cut by navbar */
-.hero-section {
-  padding-top: 150px !important;
-  padding-top: 90px !important;
-}
-
-/* Stronger active highlight */
-
-
-/* ULTRA TRANSPARENT iOS-STYLE NAVBAR */
-.navbar {
-  background: rgba(255,255,255,0.25) !important;
-  backdrop-filter: blur(30px) saturate(180%);
-  -webkit-backdrop-filter: blur(30px) saturate(180%);
-  border-bottom: 1px solid rgba(255,255,255,0.25);
-  padding: 1rem 0 !important;
-}
-
-/* Active tab like John Deere */
-
-
-
-
-
-/* === Active gold pill (Option B) === */
-
-
-/* remove underline effect if any */
-
-
-/* Transition for navbar states */
-.navbar {
-  transition: background 300ms ease, backdrop-filter 300ms ease, padding 250ms ease;
-}
-
-/* Initial navbar (solid-ish) so hero starts below it */
-.navbar.initial {
-  background: rgba(255,255,255,0.92) !important;
-  backdrop-filter: blur(4px) saturate(120%);
-  -webkit-backdrop-filter: blur(4px) saturate(120%);
-  box-shadow: 0 1px 0 rgba(0,0,0,0.04);
-}
-
-/* Overlay (glass) navbar after scroll */
-.navbar.overlay {
-  background: rgba(255,255,255,0.25) !important;
-  backdrop-filter: blur(18px) saturate(160%);
-  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  padding: 18px 22px;
   box-shadow: none;
 }
 
-/* Hero spacing controlled via class toggle, ensure smooth */
-.hero-section {
-  transition: padding-top 300ms ease;
+/* Active */
+.faq-accordion .accordion-button:not(.collapsed) {
+  background: #e6f4ed;
 }
 
-/* Smaller initial top padding (will be set via JS) */
-.hero-section.padded {
-  /* padding-top is set inline by JS to match navbar height */
+/* Remove default arrow */
+.faq-accordion .accordion-button::after {
+  display: none;
 }
 
-/* reduce overlap on mobile too */
-@media (max-width: 992px) {
-  .navbar.initial { background: rgba(255,255,255,0.98) !important; }
-  .navbar.overlay { background: rgba(255,255,255,0.22) !important; }
-  
+/* Custom + / − */
+.faq-accordion .accordion-button::before {
+  content: '+';
+  font-size: 20px;
+  font-weight: bold;
+  margin-right: 12px;
+  color: #0b7a3b;
 }
 
-/* Clean gold active text highlight */
-.nav-link.active {
-  color: var(--accent-gold) !important;
-  font-weight: 900 !important;
-  background: none !important;
-  border: none !important;
-  border-radius: 0 !important;
-  transform: none !important;
-  text-decoration: none !important;
+.faq-accordion .accordion-button:not(.collapsed)::before {
+  content: '–';
 }
 
-/* Initial navbar cream */
-.navbar.initial {
-  background:rgba(255,253,245,0.98) !important;
-  backdrop-filter:none !important;
-}
-
-/* Overlay after scroll */
-.navbar.overlay {
-  background:rgba(255,255,255,0.22) !important;
-  backdrop-filter:blur(20px);
-}
-
-@media (max-width: 992px){
-  .navbar-toggler-icon{
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' stroke='%232d5016' stroke-width='3' viewBox='0 0 30 30'%3e%3cline x1='4' y1='7' x2='26' y2='7'/%3e%3cline x1='4' y1='15' x2='26' y2='15'/%3e%3cline x1='4' y1='23' x2='26' y2='23'/%3e%3c/svg%3e");
-  }
+/* Answer */
+.faq-accordion .accordion-body {
+  padding: 16px 22px;
+  color: #4b5563;
+  line-height: 1.7;
 }
 
 
-
-/* ===== Initial Transparent Navbar (Safe Additive Patch) ===== */
-.navbar {
-  background: transparent !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-  box-shadow: none !important;
-}
-
-.navbar a,
-.navbar li,
-.navbar span,
-.navbar .nav-link {
-  color: #ffffff !important;
-}
-
-/* After scroll: rely on existing .scrolled styles already in project */
-
-
-
-/* ===== FIX: Force transparent navbar before scroll ===== */
-body:not(.scrolled) .navbar {
-  background: transparent !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-}
-
-
-/* ===== Navbar Border Removal ===== */
-.navbar {
-  border: none !important;
-}
-
-/* ===== Navbar After Scroll: White Background ===== */
-.navbar.scrolled {
-  background: #ffffff !important;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-}
-
-.navbar.scrolled a,
-.navbar.scrolled li,
-.navbar.scrolled span {
-  color: #1a1a1a !important;
-}
-
-
-/* ===== Navbar After Scroll: Green Text ===== */
-.navbar.scrolled a,
-.navbar.scrolled li,
-.navbar.scrolled span {
-  color: #2f6b2f !important; /* Agrisethu green */
-}
-
-.navbar.scrolled a:hover {
-  color: #1f4d1f !important;
-}
-
-
-/* ===== iOS Tahoe-style Glass Navbar (Scrolled) ===== */
-.navbar {
-  transition: background 0.35s ease, backdrop-filter 0.35s ease, box-shadow 0.35s ease;
-}
-
-.navbar.scrolled {
-  background: rgba(255, 255, 255, 0.75) !important;
-  backdrop-filter: blur(6px) saturate(160%);
-  -webkit-backdrop-filter: blur(6px) saturate(160%);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-}
-
-/* Fade-in animation */
-.navbar.scrolled {
-  animation: navbarFade 0.35s ease forwards;
-}
-
-@keyframes navbarFade {
-  from {
-    opacity: 0.85;
-    transform: translateY(-6px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Logo color swap */
-.navbar.scrolled img {
-  filter: brightness(0.2) saturate(120%);
-}
-
-
-/* ===== Remove Logo Color Change ===== */
-.navbar.scrolled img {
-  filter: none !important;
-}
-
-/* ===== macOS Tahoe-style Glass Blur (Scrolled) ===== */
-.navbar.scrolled {
-  background: rgba(255, 255, 255, 0.6) !important;
-  backdrop-filter: blur(12px) saturate(180%);
-  -webkit-backdrop-filter: blur(12px) saturate(180%);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-}
-
-
-/* ===== Navbar After Scroll: Solid White ===== */
-.navbar.scrolled {
-  background: #ffffff !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-  box-shadow: 0 8px 22px rgba(0,0,0,0.08);
-}
-
-/* ===== Restore Active Link Highlight (Gold) ===== */
-.navbar .active,
-.navbar a.active,
-.navbar li.active > a {
-  color: #d4af37 !important; /* gold */
-  font-weight: 600;
-}
-
-.navbar .active::after,
-.navbar a.active::after {
-  content: "";
-  display: block;
-  height: 2px;
-  background: #d4af37;
-  margin-top: 4px;
-  border-radius: 2px;
-}
-
-
-/* ===== FINAL GUARANTEE: NAVBAR WHITE AFTER SCROLL ===== */
-html body .navbar.scrolled {
-  background-color: #ffffff !important;
-  background-image: none !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-}
-
-
-/* ===== Instant White Navbar (No Fade) ===== */
-.navbar {
-  transition: none !important;
-}
-
-html body .navbar.scrolled {
-  background-color: #ffffff !important;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-}
-
-/* ===== Navbar Text Cleanup ===== */
-.navbar a,
-.navbar li,
-.navbar span {
-  font-weight: 400 !important; /* remove bold */
-  font-size: 14px; /* reduced size */
-}
-
-/* ===== Logo Shadow ===== */
-.navbar img {
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  border-radius: 6px;
-}
-
-
-/* ===== Remove Logo Shadow ===== */
-.navbar img {
-  box-shadow: none !important;
-}
-
-/* ===== Sync Text Color + Background on Scroll ===== */
-html body .navbar.scrolled {
-  background-color: #ffffff !important;
-}
-
-.navbar.scrolled a,
-.navbar.scrolled li,
-.navbar.scrolled span {
-  color: #2f6b2f !important; /* green */
-}
-
-/* ===== Smaller Navbar Text ===== */
-.navbar a,
-.navbar li,
-.navbar span {
-  font-size: 13px !important;
-  font-weight: 400 !important;
-  white-space: nowrap; /* keep single line */
-}
-
-
-/* ===== Sync background + text instantly ===== */
-.navbar {
-  transition: none !important;
-}
-
-html body .navbar.scrolled {
-  background-color: #ffffff !important;
-}
-
-/* ===== Text color after scroll ===== */
-.navbar.scrolled a,
-.navbar.scrolled li,
-.navbar.scrolled span {
-  color: #2f6b2f !important;
-}
-
-/* ===== Active link ALWAYS gold ===== */
-.navbar a.active,
-.navbar li.active > a,
-.navbar.scrolled a.active,
-.navbar.scrolled li.active > a {
-  color: #d4af37 !important;
-  font-weight: 400 !important;
-}
-
-/* ===== Slightly increase text size ===== */
-.navbar a,
-.navbar li,
-.navbar span {
-  font-size: 14px !important;
-  white-space: nowrap;
-}
