@@ -797,4 +797,107 @@ img {
     font-size: 1.7rem;
   }
 }
+/* Proven Process Section */
+.section-process {
+  /* background: linear-gradient(180deg, #0b7a3b 0%, #1e3d2b 100%); */
+  background: linear-gradient(135deg, rgba(45, 80, 22, 0.7), rgba(107, 68, 35, 0.5));
+  padding: 80px 0;
+}
+
+/* Glass cards */
+.process-card {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(6px);
+  border-radius: 18px;
+  padding: 30px;
+  text-align: center;
+  color: #fff;
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.process-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+}
+
+/* Icon */
+.process-icon {
+  width: 64px;
+  height: 64px;
+  background: rgba(255,255,255,0.25);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-size: 26px;
+}
+/* FAQ */
+/* Scrollable FAQ Container */
+.faq-scroll-wrapper {
+  max-height: 420px; /* ~3 questions visible */
+  overflow-y: auto;
+  padding-right: 6px;
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+.faq-scroll-wrapper::-webkit-scrollbar {
+  width: 6px;
+}
+.faq-scroll-wrapper::-webkit-scrollbar-thumb {
+  background-color: rgba(11, 122, 59, 0.4);
+  border-radius: 10px;
+}
+
+/* FAQ Cards */
+.faq-accordion .accordion-item {
+  background: rgba(246, 251, 248, 0.95);
+  border-radius: 16px;
+  border: 1px solid rgba(11, 122, 59, 0.25);
+  margin-bottom: 14px;
+  transition: all 0.3s ease;
+}
+
+/* Question */
+.faq-accordion .accordion-button {
+  background: transparent;
+  color: #0b7a3b;
+  font-weight: 600;
+  padding: 18px 22px;
+  box-shadow: none;
+}
+
+/* Active */
+.faq-accordion .accordion-button:not(.collapsed) {
+  background: #e6f4ed;
+}
+
+/* Remove default arrow */
+.faq-accordion .accordion-button::after {
+  display: none;
+}
+
+/* Custom + / − */
+.faq-accordion .accordion-button::before {
+  content: '+';
+  font-size: 20px;
+  font-weight: bold;
+  margin-right: 12px;
+  color: #0b7a3b;
+}
+
+.faq-accordion .accordion-button:not(.collapsed)::before {
+  content: '–';
+}
+
+/* Answer */
+.faq-accordion .accordion-body {
+  padding: 16px 22px;
+  color: #4b5563;
+  line-height: 1.7;
+}
+
 
