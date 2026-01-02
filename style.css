@@ -124,7 +124,7 @@ img {
 .navbar-nav .nav-link {
   color: var(--text-light);
   font-weight: 400;
-  font-size: 1rem;
+  font-size: 0.875rem;
   margin: 0 1rem;
   padding: 0.5rem 0;
   position: relative;
