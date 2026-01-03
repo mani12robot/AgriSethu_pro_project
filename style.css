@@ -124,7 +124,7 @@ img {
 .navbar-nav .nav-link {
   color: var(--text-light);
   font-weight: 400;
-  font-size: 1rem;
+  font-size: 0.875rem;
   margin: 0 1rem;
   padding: 0.5rem 0;
   position: relative;
@@ -1000,5 +1000,102 @@ html body .navbar.scrolled {
   /* Active item gold */
   .navbar ul a.active {
     color: #d4af37 !important;
+  }
+}
+
+
+/* ===== Desktop About Us Dropdown (same as mobile menu) ===== */
+.navbar .dropdown {
+  position: relative;
+}
+
+.navbar .dropdown-menu {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  padding: 12px 18px;
+  min-width: 220px;
+  z-index: 1000;
+}
+
+.navbar .dropdown-menu li {
+  padding: 10px 0;
+}
+
+.navbar .dropdown-menu li + li {
+  border-top: 1px solid rgba(0,0,0,0.06);
+}
+
+.navbar .dropdown-menu a {
+  color: #2f6b2f;
+}
+
+/* show on hover (desktop) */
+@media (min-width: 993px) {
+  .navbar .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+}
+
+
+/* ===== About Us Active Highlight ===== */
+.navbar .dropdown > a.active {
+  color: #d4af37 !important;
+}
+
+.dropdown-menu a.active {
+  color: #d4af37 !important;
+  font-weight: 500;
+}
+
+
+/* ===== Mobile About Us Dropdown Fix ===== */
+@media (max-width: 992px) {
+  .navbar .dropdown-menu {
+    display: none;
+    position: static;
+    box-shadow: none;
+    margin-top: 8px;
+  }
+
+  .navbar .dropdown-menu.open {
+    display: block;
+  }
+}
+
+
+/* ===== Mobile About Us Accordion Dropdown ===== */
+@media (max-width: 992px) {
+  .navbar .dropdown-menu {
+    display: none;
+    position: static;
+    background: transparent;
+    box-shadow: none;
+    padding-left: 16px;
+  }
+
+  .navbar .dropdown-menu.accordion-open {
+    display: block;
+  }
+
+  .navbar .dropdown > a::after {
+    content: "▾";
+    margin-left: 6px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 992px) {
+  .navbar .dropdown-menu {
+    display: none;
+    position: static;
+    box-shadow: none;
+  }
+  .navbar .dropdown-menu.accordion-open {
+    display: block;
   }
 }
